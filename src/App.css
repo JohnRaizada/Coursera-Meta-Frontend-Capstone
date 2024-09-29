@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*--------- Global ---------*/
+.app {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+li {
+  display: inline;
+}
+ul {
+  padding: 0;
+}
+h6 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+a img {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  height: 100vh;
+  margin: 1rem;
+}
+.not-found section {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.not-found h1 {
+  font-size: 4rem;
+  font-weight: var(--font-weight-extrabold);
+  color: var(--primary-color-main);
+}
+.not-found p {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-color-main);
+}
+.not-found img {
+  height: 6rem;
+}
+lottie-player {
+  height: 20rem;
+}
+/*--------- Fonts ---------*/
+:root {
+  --markazi-text: "Markazi Text", serif;
+  --karla: "Karla", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+}
+.display-title {
+  font-family: var(--markazi-text);
+  font-size: 4rem;
+  font-weight: var(--font-weight-medium);
+}
+.display-subtitle {
+  font-family: var(--markazi-text);
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-regular);
+}
+.lead-text {
+  font-family: var(--karla);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-medium);
+}
+.section-title {
+  font-family: var(--karla);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-extrabold);
+}
+.section-category {
+  font-family: var(--karla);
+  font-size: 1rem;
+  font-weight: var(--font-weight-extrabold);
+}
+.card-title {
+  font-family: var(--karla);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+}
+.paragraph-text {
+  font-family: var(--karla);
+  font-size: 1rem;
+  font-weight: var(--font-weight-regular);
+}
+.highlight-text {
+  font-family: var(--karla);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
 }
 
-.App-link {
-  color: #61dafb;
+/*--------- Colors ---------*/
+:root {
+  --primary-color-main: #495e57;
+  --primary-color-other: #f4ce14;
+  --secondary-color-main: #ee9972;
+  --secondary-color-other: #fbdabb;
+  --hightlight-color-main: #edefee;
+  --hightlight-color-other: #333333;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.primary-color-main {
+  color: var(--primary-color-main);
+}
+.primary-color-other {
+  color: var(--primary-color-other);
+}
+.secondary-color-main {
+  color: var(--secondary-color-main);
+}
+.secondary-color-other {
+  color: var(--secondary-color-other);
+}
+.highlight-color-main {
+  color: var(--hightlight-color-main);
+}
+.highlight-color-other {
+  color: var(--hightlight-color-other);
+}
+/*--------- Radius ---------*/
+:root {
+  --corner-radius: 1rem;
+}
+/*--------- Header ---------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+header a {
+  margin: 1rem;
+}
+/*--------- Footer ---------*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 1.5625rem 6.25rem;
+  gap: 6.25rem;
+  background-color: var(--secondary-color-other);
+}
+nav[role="navigation"] li {
+  display: block;
 }

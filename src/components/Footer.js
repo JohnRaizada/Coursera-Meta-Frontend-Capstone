@@ -1,42 +1,69 @@
 import logo from "../assets/logo.svg";
-import { navLinks, mobile, email, address, socials } from "../Data";
+import {
+  navLinks,
+  mobile,
+  email,
+  addressLine1,
+  addressLine2,
+  socials,
+} from "../Data";
 export default function Footer() {
   return (
     <footer>
       <img src={logo} alt="logo" />
-      <div>
-        <h6>Sitemap</h6>
+      <nav role="navigation">
+        <h6 className="section-category highlight-color-other">Sitemap</h6>
         <ul>
           {navLinks.map(({ name, link }) => (
             <li key={name}>
-              <a href={link}>{name}</a>
+              <a href={link} className="paragraph-text primary-color-main">
+                {name}
+              </a>
             </li>
           ))}
         </ul>
-      </div>
-      <div>
-        <h6>Contact</h6>
-        <p>
-          <a href={`tel:${mobile}`}>{mobile}</a>
+      </nav>
+      <nav>
+        <h6 className="section-category highlight-color-other">Contact</h6>
+        <p className="paragraph-text">
+          <a
+            href={`tel:${mobile}`}
+            className="primary-color-main"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {mobile}
+          </a>
           <br />
-          {email}
+          <a href={`mailto:${email}`} className="primary-color-main">
+            {email}
+          </a>
           <br />
           <br />
-          {address}
+          <a
+            href={`https://maps.google.com/?q=${addressLine1} ${addressLine2}`}
+            className="primary-color-main"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {addressLine1}
+            <br />
+            {addressLine2}
+          </a>
         </p>
-      </div>
-      <div>
-        <h6>Follow us</h6>
+      </nav>
+      <nav>
+        <h6 className="section-category highlight-color-other">Follow us</h6>
         <ul>
           {socials.map(({ name, link, icon }) => (
             <li key={name}>
-              <a href={link}>
+              <a href={link} target="_blank" rel="noopener noreferrer">
                 <img src={icon} alt={name} title={name} />
               </a>
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
     </footer>
   );
 }

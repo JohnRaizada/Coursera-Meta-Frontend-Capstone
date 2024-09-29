@@ -14,8 +14,9 @@ export const navLinks = [
   { name: "Login", link: "/login" },
 ];
 export const mobile = "(312) 555-6789";
-export const email = "contact@littlelemon.com"
-export const address = "1234 Citrus AvenueChicago, IL 60601";
+export const email = "contact@littlelemon.com";
+export const addressLine1 = "1234 Citrus Avenue";
+export const addressLine2 = "Chicago, IL 60601";
 export const socials = [
   { name: "Facebook", link: "https://www.facebook.com", icon: facebook },
   { name: "Pinterest", link: "https://www.pinterest.com", icon: pinterest },
@@ -23,4 +24,4 @@ export const socials = [
   { name: "Spotify", link: "https://www.spotify.com", icon: spotify },
   { name: "Twitter", link: "https://www.twitter.com", icon: twitter },
   { name: "YouTube", link: "https://www.youtube.com", icon: youtube },
-]
+];
