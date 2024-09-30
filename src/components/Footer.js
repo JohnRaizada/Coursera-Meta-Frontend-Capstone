@@ -1,4 +1,4 @@
-import logo from "../assets/logo.svg";
+import {logo} from "../Data";
 import {
   navLinks,
   mobile,

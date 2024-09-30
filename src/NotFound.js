@@ -1,5 +1,4 @@
 import "./App.css";
-import logo from "./assets/logo.svg";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 export default function NotFound() {
@@ -12,7 +11,6 @@ export default function NotFound() {
     }, [navigate]);
   return (
     <div className="not-found">
-      <img src={logo} alt="logo" />
       <section className="not-found">
         <lottie-player
           src="https://lottie.host/c72805e3-1f82-4a70-b6ed-b328407c74ae/4GoKIoFWkv.json"
