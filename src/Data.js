@@ -65,27 +65,32 @@ export const specials = [
 ];
 export const testimonials = [
   {
-    "name": "Lee Hui Yi",
-    "rating": 5,
-    "comment": "I love the food and the service. The staff is very friendly and the food is delicious",
-    "image": leeHuiYi,
+    name: "Lee Hui Yi",
+    rating: 5,
+    comment:
+      "I love the food and the service. The staff is very friendly and the food is delicious",
+    image: leeHuiYi,
   },
   {
-    "name": "Unnati",
-    "rating": 4,
-    "comment": "The food is great, the service is good. I would definitely recommend this place.",
-    "image": unnati,
+    name: "Unnati",
+    rating: 4,
+    comment:
+      "The food is great, the service is good. I would definitely recommend this place.",
+    image: unnati,
   },
   {
-    "name": "Urvashi",
-    "rating": 5,
-    "comment": "I love the food and the service. The staff is very friendly and the food is delicious",
-    "image": urvashi,
+    name: "Urvashi",
+    rating: 5,
+    comment:
+      "I love the food and the service. The staff is very friendly and the food is delicious",
+    image: urvashi,
   },
   {
-    "name": "Yuqi CHEN",
-    "rating": 4,
-    "comment": "The food is great, the service is good. I would definitely recommend this place.",
-    "image": yuqiCHEN,
+    name: "Yuqi CHEN",
+    rating: 4,
+    comment:
+      "The food is great, the service is good. I would definitely recommend this place.",
+    image: yuqiCHEN,
   },
-]
+];
+export const occasions = ["birthday", "anniversary"];
