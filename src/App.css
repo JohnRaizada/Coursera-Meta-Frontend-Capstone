@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap");
 
 /*--------- Reset ---------*/
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  min-width:min-content;
+  min-width: min-content;
 }
 li {
   display: inline;
@@ -32,7 +32,7 @@ a img {
   margin-right: 0.5rem;
 }
 .not-found {
-  flex:1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -48,7 +48,7 @@ a img {
   font-size: 4rem;
   font-weight: var(--font-weight-extrabold);
   color: var(--primary-color-main);
-  margin:1rem;
+  margin: 1rem;
   padding: 1rem;
 }
 .not-found p {
@@ -144,7 +144,8 @@ lottie-player {
 }
 /*--------- Components ---------*/
 /*--------- Button ---------*/
-button, [role=button] {
+button,
+[role="button"] {
   display: inline-block;
   padding: 1.25rem;
   border: none;
@@ -156,10 +157,12 @@ button, [role=button] {
   font-weight: var(--font-weight-extrabold);
   cursor: pointer;
 }
-button:hover, [role=button]:hover {
+button:hover,
+[role="button"]:hover {
   border: 0.25rem solid var(--primary-color-main);
 }
-button:active, [role=button]:active {
+button:active,
+[role="button"]:active {
   background-color: var(--primary-color-main);
   color: var(--primary-color-other);
 }
@@ -180,11 +183,15 @@ header {
 header a {
   margin: 1rem;
 }
+header a:hover{
+  border-bottom: .0625rem solid var(--primary-color-main);
+  transition: all 0.5s ease-in-out;
+}
 nav[role="navigation"] li {
   display: block;
 }
 /*--------- Main ---------*/
-main{
+main {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -254,8 +261,14 @@ footer {
   border-radius: var(--corner-radius);
   background-color: var(--hightlight-color-main);
   margin: 1rem;
+  transition: all 0.5s ease-in-out;
 }
-.specials-card span{
+.specials-card:hover {
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0.5rem 0.5rem 0.5rem var(--primary-color-main);
+}
+.specials-card span {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -264,7 +277,7 @@ footer {
 .specials-card h2 {
   margin: 1rem;
 }
-.specials-card p{
+.specials-card p {
   margin: 0 1rem;
 }
 .specials-card img {
@@ -274,9 +287,9 @@ footer {
 .specials-card span img {
   width: 1rem;
   height: 1rem;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
-.specials-card > span {
+#order-delivery {
   padding: 1rem;
   width: fit-content;
 }
@@ -296,7 +309,7 @@ footer {
   justify-content: center;
 }
 /*---------- TestimonialCard ----------*/
-.testimonial-card{
+.testimonial-card {
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -313,7 +326,7 @@ footer {
   align-items: start;
   width: max-content;
 }
-.testimonial-card div{
+.testimonial-card div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -327,7 +340,7 @@ footer {
   border-radius: 50%;
   width: 3.125rem;
   height: 3.125rem;
-  border: .0625rem solid black;
+  border: 0.0625rem solid black;
 }
 .testimonial-card p {
   max-width: 6.25rem;
@@ -358,32 +371,84 @@ footer {
   width: 100%;
   border-radius: var(--corner-radius);
 }
-#about-bottom{
+#about-bottom {
   grid-area: 2/ 1 / -1 / 4;
-    border: 1rem solid var(--secondary-color-main);
+  border: 1rem solid var(--secondary-color-main);
 }
-#about-top{
+#about-top {
   grid-area: 1 / 3 / 4 / -1;
-    border: 1rem solid var(--primary-color-other);
+  border: 1rem solid var(--primary-color-other);
 }
 /*---------- Booking ----------*/
-form {
-  display:  flex;
+.booking{
+  flex:1;
+  display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: start;
   gap: 2rem;
   padding: 1rem;
+  border: .0625rem solid var(--primary-color-main);
+  border-radius: var(--corner-radius);
+  margin: 4rem;
 }
 form button {
   align-self: center;
 }
-form div{
+form div {
+  width: 20rem;
+}
+form lottie-player {
+  height: 4rem;
+}
+input {
+  width: calc(100% - 2rem);
+}
+select {
   width: 100%;
 }
-input, select {
-  width: 100%;
+input,
+select {
   border-radius: var(--corner-radius);
   height: 2rem;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+  border: .0625rem solid var(--primary-color-main);
+}
+.error {
+  border: 0.125rem solid var(--secondary-color-main);
+}
+.error:focus {
+  outline: var(--secondary-color-main) solid.125rem;
+}
+
+/*---------- Confirmation ----------*/
+.confirmation{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.confirmation lottie-player {
+  animation: grow-shrink 5s infinite;
 }

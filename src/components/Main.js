@@ -13,8 +13,8 @@ export function initializeTimes() {
   return fetchAPI(new Date());
 }
 
-export function submitForm(formData) {
-  if (submitAPI(formData)) window.location.href = "/confirmation";
+export async function submitForm(formData) {
+  if (await submitAPI(formData)) window.location.href = "/confirmation";
 }
 export default function Main() {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());

@@ -9,7 +9,7 @@ export default function Hero() {
           <h1 className="display-title primary-color-other">{name}</h1>
           <h2 className="display-subtitle highlight-color-main">{city}</h2>
           <p className="lead-text highlight-color-main">{description}</p>
-          <Link to="/booking" role="button">
+          <Link to="/booking" role="button" title="Reserve a table">
             Reserve a table
           </Link>
         </article>

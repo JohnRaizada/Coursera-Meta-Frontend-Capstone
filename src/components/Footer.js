@@ -1,5 +1,6 @@
 import {logo} from "../Data";
 import {
+  name,
   navLinks,
   mobile,
   email,
@@ -10,13 +11,13 @@ import {
 export default function Footer() {
   return (
     <footer>
-      <img src={logo} alt="logo" />
+      <img src={logo} alt="logo" title={name} />
       <nav role="navigation">
         <h6 className="section-category highlight-color-other">Sitemap</h6>
         <ul>
           {navLinks.map(({ name, link }) => (
             <li key={name}>
-              <a href={link} className="paragraph-text primary-color-main">
+              <a href={link} className="paragraph-text primary-color-main" title={name}>
                 {name}
               </a>
             </li>
@@ -31,11 +32,12 @@ export default function Footer() {
             className="primary-color-main"
             target="_blank"
             rel="noopener noreferrer"
+            title="Call us"
           >
             {mobile}
           </a>
           <br />
-          <a href={`mailto:${email}`} className="primary-color-main">
+          <a href={`mailto:${email}`} className="primary-color-main" title="Email">
             {email}
           </a>
           <br />
@@ -45,6 +47,7 @@ export default function Footer() {
             className="primary-color-main"
             target="_blank"
             rel="noopener noreferrer"
+            title="Visit us"
           >
             {addressLine1}
             <br />

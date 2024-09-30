@@ -93,4 +93,4 @@ export const testimonials = [
     image: yuqiCHEN,
   },
 ];
-export const occasions = ["birthday", "anniversary"];
+export const occasions = ["Birthday", "Anniversary"];

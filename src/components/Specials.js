@@ -6,7 +6,7 @@ export default function Specials() {
     <section className="container" id="specials">
       <span>
         <h2 className="display-title highlight-color-other">This weeks specials!</h2>
-        <Link to="/online-menu" role="button">Online Menu</Link>
+        <Link to="/online-menu" role="button" title="Online Menu">Online Menu</Link>
       </span>
           <section>
               {specials.map((special) => (

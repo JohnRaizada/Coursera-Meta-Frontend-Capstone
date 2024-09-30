@@ -1,22 +1,42 @@
-import { useState } from "react";
 import { occasions } from "../Data";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useState } from "react";
 export default function Booking({
   availableTimes,
   availableTimesDispatch,
   submitForm,
 }) {
-  const [booking, setBooking] = useState({
-    date: new Date().toISOString().split("T")[0],
-    time: availableTimes[0],
-    guests: 1,
-    occasion: occasions[0],
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formik = useFormik({
+    initialValues: {
+      date: new Date().toISOString().split("T")[0],
+      time: availableTimes[0],
+      guests: 1,
+      occasion: occasions[0],
+    },
+    validationSchema: Yup.object({
+      date: Yup.date("Must be a valid date").required("Required"),
+      time: Yup.string("Must be a valid time").required("Required"),
+      guests: Yup.number("Must be a natural number")
+        .required("Required")
+        .min(1, "Atleast 1 is required")
+        .max(10, "Atmost 10 are allowed"),
+      occasion: Yup.string("Must be a valid occasion").required("Required"),
+    }),
+    onSubmit: (values) => {
+      submitForm(values);
+    },
   });
   return (
-    <section>
+    <section className="booking">
       <form
         onSubmit={(e) => {
-          e.preventDefault();
-          submitForm(booking);
+          if (formik.isValid) {
+            setIsSubmitting(true);
+            e.preventDefault();
+            formik.handleSubmit(e);
+          }
         }}
       >
         <h1 className="display-title highlight-color-other">Reserve a table</h1>
@@ -32,15 +52,22 @@ export default function Booking({
             required
             id="booking-date"
             name="booking-date"
-            value={booking.date}
+            {...formik.getFieldProps("date")}
             onChange={(e) => {
-              setBooking({ ...booking, date: e.target.value });
               availableTimesDispatch({
                 type: "updateTimes",
                 date: e.target.value,
               });
+              formik.handleChange(e);
             }}
+            className={formik.errors.date && formik.touched.date ? "error" : ""}
+            title="Choose a date"
           />
+          {formik.errors.date && formik.touched.date && (
+            <p className="highlight-text secondary-color-main">
+              {formik.errors.date}
+            </p>
+          )}
         </div>
         <div>
           <label
@@ -52,8 +79,9 @@ export default function Booking({
           <select
             id="booking-time"
             name="booking-time"
-            value={booking.time}
-            onChange={(e) => setBooking({ ...booking, time: e.target.value })}
+            {...formik.getFieldProps("time")}
+            className={formik.errors.time && formik.touched.time ? "error" : ""}
+            title="Choose a time"
           >
             {availableTimes.map((time) => (
               <option key={time} value={time}>
@@ -61,6 +89,11 @@ export default function Booking({
               </option>
             ))}
           </select>
+          {formik.errors.time && formik.touched.time && (
+            <p className="highlight-text secondary-color-main">
+              {formik.errors.time}
+            </p>
+          )}
         </div>
         <div>
           <label
@@ -77,9 +110,17 @@ export default function Booking({
             placeholder="1"
             min="1"
             max="10"
-            value={booking.guests}
-            onChange={(e) => setBooking({ ...booking, guests: e.target.value })}
+            {...formik.getFieldProps("guests")}
+            className={
+              formik.errors.guests && formik.touched.guests ? "error" : ""
+            }
+            title="Number of guests"
           />
+          {formik.errors.guests && formik.touched.guests && (
+            <p className="highlight-text secondary-color-main">
+              {formik.errors.guests}
+            </p>
+          )}
         </div>
         <div>
           <label
@@ -92,10 +133,11 @@ export default function Booking({
             required
             id="booking-occasion"
             name="booking-occasion"
-            value={booking.occasion}
-            onChange={(e) =>
-              setBooking({ ...booking, occasion: e.target.value })
+            {...formik.getFieldProps("occasion")}
+            className={
+              formik.errors.occasion && formik.touched.occasion ? "error" : ""
             }
+            title="Occasion"
           >
             {occasions.map((occasion) => (
               <option key={occasion} value={occasion}>
@@ -103,8 +145,24 @@ export default function Booking({
               </option>
             ))}
           </select>
+          {formik.errors.occasion && formik.touched.occasion && (
+            <p className="highlight-text secondary-color-main">
+              {formik.errors.occasion}
+            </p>
+          )}
         </div>
-        <button type="submit">Make your reservation</button>
+        {isSubmitting ? (
+          <lottie-player
+            src="https://lottie.host/21863f2b-b4f9-4105-a6c6-98759685f1da/ojA2pVuLU8.json"
+            speed="1"
+            loop
+            autoplay
+            direction="1"
+            mode="normal"
+          ></lottie-player>
+        ) : (
+          <button type="submit" title="Submit">Make your reservation</button>
+        )}
       </form>
     </section>
   );

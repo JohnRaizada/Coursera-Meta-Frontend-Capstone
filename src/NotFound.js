@@ -14,7 +14,6 @@ export default function NotFound() {
       <section className="not-found">
         <lottie-player
           src="https://lottie.host/c72805e3-1f82-4a70-b6ed-b328407c74ae/4GoKIoFWkv.json"
-          background="##FFFFFF"
           speed="1"
           loop
           autoplay

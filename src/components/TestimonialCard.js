@@ -1,6 +1,6 @@
 export default function TestimonialCard({ name, rating, comment, image }) {
   return (
-    <article className="testimonial-card">
+    <article className="testimonial-card" title="Testimonial">
       <h3 className="section-category primary-color-main">{name}</h3>
       <span>
         <div>
