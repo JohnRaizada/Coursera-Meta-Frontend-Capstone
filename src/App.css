@@ -222,7 +222,7 @@ footer {
   align-items: start;
 }
 .hero p {
-  margin: 2.5rem 0;
+  margin: 2.5rem 2.5rem 2.5rem 0;
 }
 #hero img {
   grid-area: 1 / 6/3/11;
@@ -358,7 +358,8 @@ footer {
   align-items: start;
 }
 #about p {
-  margin: 2.5rem 0;
+  margin: 2.5rem 2.5rem 2.5rem 0;
+  text-align: justify;
 }
 #about span {
   grid-area: 1 / 6 / 2 / 11;

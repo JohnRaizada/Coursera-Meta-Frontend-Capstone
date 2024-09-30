@@ -16,6 +16,8 @@ export const name = "Little Lemon";
 export const city = "Chicago";
 export const description =
   "We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.";
+export const story =
+  "Little Lemon began as a dream shared by two brothers, Adrian and Mario. Growing up in the heart of Chicago, they were immersed in the rich, flavorful tapestry of Mediterranean cuisine. Their grandmother's kitchen was a sanctuary of warmth and tradition, where the aromas of freshly baked pita bread, sizzling kebabs, and fragrant spices filled the air. Inspired by her love for cooking and her passion for sharing authentic flavors, Adrian and Mario decided to bring a taste of their heritage to the Windy City.";
 export const mobile = "(312) 555-6789";
 export const email = "contact@littlelemon.com";
 export const addressLine1 = "1234 Citrus Avenue";

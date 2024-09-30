@@ -1,13 +1,13 @@
 import aboutTop from "../assets/main/aboutTop.png";
 import aboutBottom from "../assets/main/aboutBottom.png";
-import { name, city, description } from "../Data";
+import { name, city, story } from "../Data";
 export default function About() {
   return (
     <section className="container" id="about">
       <article>
         <h2 className="display-title secondary-color-main">{name}</h2>
         <h3 className="display-subtitle primary-color-main">{city}</h3>
-        <p className="lead-text highlight-color-other">{description}</p>
+        <p className="lead-text highlight-color-other">{story}</p>
       </article>
       <span>
         <img
