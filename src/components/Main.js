@@ -2,11 +2,11 @@ import Home from "./Home";
 import Booking from "./Booking";
 import { Routes, Route } from "react-router-dom";
 import NotFound from "../NotFound";
-import { useReducer } from "react";
+import { useReducer, useContext } from "react";
 import { fetchAPI, submitAPI } from "../api";
 import Confimation from "./Confirmation";
+import { SidebarContext, HeaderContext } from "../App";
 export function updateTimes(state, action) {
-  console.log(action.date);
   return fetchAPI(new Date(action.date));
 }
 export function initializeTimes() {
@@ -18,8 +18,10 @@ export async function submitForm(formData) {
 }
 export default function Main() {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  const { setSidebarOpen } = useContext(SidebarContext);
+  const { headerVisible } = useContext(HeaderContext);
   return (
-    <main>
+    <main onClick={()=>setSidebarOpen(false)} className={headerVisible? "header":null}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

@@ -1,4 +1,4 @@
-import {logo} from "../Data";
+import logo from "../assets/logo512.png";
 import {
   name,
   navLinks,
@@ -11,20 +11,30 @@ import {
 export default function Footer() {
   return (
     <footer>
-      <img src={logo} alt="logo" title={name} />
-      <nav role="navigation">
+      <img
+        src={logo}
+        alt="logo"
+        title={name}
+        className="logo"
+        onClick={() => (window.location.href = "/")}
+      />
+      <nav id="doormat" role="navigation">
         <h6 className="section-category highlight-color-other">Sitemap</h6>
         <ul>
           {navLinks.map(({ name, link }) => (
             <li key={name}>
-              <a href={link} className="paragraph-text primary-color-main" title={name}>
+              <a
+                href={link}
+                className="paragraph-text primary-color-main"
+                title={name}
+              >
                 {name}
               </a>
             </li>
           ))}
         </ul>
       </nav>
-      <nav>
+      <nav id="contact">
         <h6 className="section-category highlight-color-other">Contact</h6>
         <p className="paragraph-text">
           <a
@@ -37,7 +47,11 @@ export default function Footer() {
             {mobile}
           </a>
           <br />
-          <a href={`mailto:${email}`} className="primary-color-main" title="Email">
+          <a
+            href={`mailto:${email}`}
+            className="primary-color-main"
+            title="Email"
+          >
             {email}
           </a>
           <br />
@@ -55,7 +69,7 @@ export default function Footer() {
           </a>
         </p>
       </nav>
-      <nav>
+      <nav id="socials">
         <h6 className="section-category highlight-color-other">Follow us</h6>
         <ul>
           {socials.map(({ name, link, icon }) => (
